@@ -1,0 +1,54 @@
+body { @include blueprint-liquid-grid; }
+
+@mixin container {
+  min-width: $blueprint-liquid-container-min-width;
+  width: $blueprint-liquid-container-width;
+  margin: 0 auto;
+  @include clearfix;
+}
+
+@mixin blueprint-liquid-grid {
+  // A container should group all your columns
+  .container {
+    @include container;
+  }
+  // Use these classes (or mixins) to set the width of a column.
+  @for $n from 1 to $blueprint-liquid-grid-columns + 1 {
+    .span-#{$n} {
+      width: span-fluid($n);
+    }
+    div {
+      &.span-#{$n} {
+        @include column($n, $n == $blueprint-liquid-grid-columns);
+      }
+    }
+  }
+  // The last column in a row needs this class (or mixin) or it will end up on the next row.
+  div.last {
+    @include last;
+  }
+  // Add these to a column to append empty cols.
+  @for $n from 1 to $blueprint-liquid-grid-columns {
+    .append-#{$n} {
+      @include append($n);
+    }
+  }
+  // Add these to a column to prepend empty cols.
+  @for $n from 1 to $blueprint-liquid-grid-columns {
+    .prepend-#{$n} {
+      @include prepend($n);
+    }
+  }
+  // Use these classes on an element to push it into the
+  // next column, or to pull it into the previous column.
+  @for $n from 1 to $blueprint-liquid-grid-columns + 1 {
+    .pull-#{$n} {
+      @include pull($n);
+    }
+  }
+  @for $n from 1 to $blueprint-liquid-grid-columns + 1 {
+    .push-#{$n} {
+      @include push($n);
+    }
+  }
+}

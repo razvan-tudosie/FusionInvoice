@@ -1,12 +1,33 @@
-/* =============================================================================
-   COMPASS
-   ========================================================================== */
-   @import "compass";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-/* =============================================================================
-   Override Default Variables and Create Yours
-   ========================================================================== */ 
-   $FontAwesomePath: "../fonts/font-awesome";
+
+$FontAwesomePath: "../fonts/font-awesome";
+
+/* Compass components */
+	@import "compass/reset";
+	@import "compass/css3";
+	@import "blueprint/liquid";
+
+/*  INCLUDES  */
+	@import "include/mixins";
+	@import "include/settings";
+	@import "include/grid";
+	@import "include/style";
+
+/* FONTS */
+   // Font Awesome 3.2.1
+   @import "fonts/font-awesome/font-awesome";
+   
+
+
+
+
+
+
+
 
 /* =============================================================================
    CSS - BOOSTRAP
@@ -104,11 +125,7 @@
    // From 979px and below, show a button to toggle navbar contents
    @import "bootstrap/responsive-navbar";
 
-/* =============================================================================
-   FONTS
-   ========================================================================== */
-   // Font Awesome 3.2.1
-   @import "fonts/font-awesome/font-awesome";
+
 
 
 /* =============================================================================
@@ -117,3 +134,7 @@
    @import "components/mixins"; // classes that could be used through all the stylesheets
    // @import "components/reports"; // ask jessy if this is being used right now?
    @import "components/datepicker"; // bootstrap datepicker
+
+
+
+@import "old-style-file";
