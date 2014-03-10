@@ -1,5 +1,6 @@
-@import "base";
+//@import "screen.scss";
 
+@import "compass";
 /* =============================================================================
    Base Styles
    ========================================================================== */
@@ -601,36 +602,36 @@ legend, .install-step h2 {
    Responsive Media Queries
    ========================================================================== */
 
-@media (max-width: 1080px) {
+// @media (max-width: 1080px) {
 
-  // Make all grid-sized elements block level again
-  [class*="span"],
-  .row-fluid [class*="span"] {
-    float: none;
-    display: block;
-    width: 100%;
-    margin-left: 0;
-    @include box-sizing(border-box);
-  }
-  .span12,
-  .row-fluid .span12 {
-    width: 100%;
-    @include box-sizing(border-box);
-  }
+//   // Make all grid-sized elements block level again
+//   [class*="span"],
+//   .row-fluid [class*="span"] {
+//     float: none;
+//     display: block;
+//     width: 100%;
+//     margin-left: 0;
+//     @include box-sizing(border-box);
+//   }
+//   .span12,
+//   .row-fluid .span12 {
+//     width: 100%;
+//     @include box-sizing(border-box);
+//   }
 
 
-}
+// }
 
-@media (max-width: 767px) {
+// @media (max-width: 767px) {
 
-  // Remove default padding set in bootstrap/_responsive-767px-max.scss
-  body {
-    padding: 0; 
-  }
+//   // Remove default padding set in bootstrap/_responsive-767px-max.scss
+//   body {
+//     padding: 0; 
+//   }
 
-  .container-fluid { padding: 0 20px; }
+//   .container-fluid { padding: 0 20px; }
 
-}
+// }
 
    /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.

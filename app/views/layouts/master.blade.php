@@ -18,7 +18,12 @@
 
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
-		<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+		<link href="{{ asset('assets/css/screen.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('assets/css/print.css') }}" media="print" rel="stylesheet" type="text/css" />
+		<!--[if IE]>
+			<link href="{{ asset('assets/css/ie.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+		<![endif]-->
+
 
 		<script src="{{ asset('assets/js/libs/modernizr-2.0.6.js') }}"></script>
 		<script src="{{ asset('assets/js/libs/jquery-1.7.1.min.js') }}"></script>
@@ -82,6 +87,18 @@
 	</head>
 
 	<body>
+		<div class="container">
+			<div class="span-12" style="background-color:red;">
+				asd
+			</div>
+			<div class="span-12 last" style="background-color:blue;">
+				sidebar
+			</div>
+		</div>
+
+
+<br /><br /><br /><br />
+
 
 
 		<nav class="navbar navbar-inverse">
