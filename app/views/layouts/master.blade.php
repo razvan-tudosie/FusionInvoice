@@ -24,6 +24,7 @@
 		<script src="{{ asset('assets/js/libs/jquery-1.7.1.min.js') }}"></script>
         <script src="{{ asset('assets/js/libs/jquery-ui-1.10.3.min.js') }}"></script>
 		<script src="{{ asset('assets/js/libs/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('assets/js/libs/bootstrap/bootstrap.js') }}"></script>
 
         <script type="text/javascript">
 
@@ -82,13 +83,26 @@
 
 	<body>
 
+
 		<nav class="navbar navbar-inverse">
 
-			<div class="navbar-inner">
+			<div class="container-fluid">
 
-				<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Brand</a>
+				</div>
 
-					<ul class="nav">
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+				
+					<ul class="nav navbar-nav">
 
 						<li>{{ link_to_route('dashboard.index', trans('fi.dashboard')) }}</li>
 
@@ -113,7 +127,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="javascript:void(0)" class="create-invoice">{{ trans('fi.create_invoice') }}</a></li>
 								<li><a href="{{ route('invoices.index', array('all')) }}">{{ trans('fi.view_invoices') }}</a></li>
-                                <li><a href="#">{{ trans('fi.view_recurring_invoices') }}</a></li>
+	                            <li><a href="#">{{ trans('fi.view_recurring_invoices') }}</a></li>
 							</ul>
 						</li>
 
@@ -143,33 +157,30 @@
 					</form>
 					@endif
 
-					<ul class="nav pull-right settings">
-                        <li><a href="#">{{ trans('fi.welcome') . ' ' . Auth::user()->name; }}</a></li>
-                        <li class="divider-vertical"></li>
-                        <li><a href="http://docs.fusioninvoice.com/1.3/" target="_blank" class="tip icon" data-original-title="Documentation" data-placement="bottom"><i class="icon-question-sign"></i></a></li>
+					<ul class="nav navbar-nav navbar-right settings">
+	                    <li><a href="#">{{ trans('fi.welcome') . ' ' . Auth::user()->name; }}</a></li>
+	                    <li class="divider-vertical"></li>
+	                    <li><a href="http://docs.fusioninvoice.com/1.3/" target="_blank" class="tip icon" data-original-title="Documentation" data-placement="bottom"><i class="fa fa-question-circle"></i></a></li>
 						<li class="divider-vertical"></li>
 						<li class="dropdown">
-							<a href="#" class="tip icon dropdown-toggle" data-toggle="dropdown" data-original-title="{{ trans('fi.settings') }}" data-placement="bottom"><i class="icon-cog"></i></a>
+							<a href="#" class="tip icon dropdown-toggle" data-toggle="dropdown" data-original-title="{{ trans('fi.settings') }}" data-placement="bottom"><i class="fa fa-cog"></i></a>
 							<ul class="dropdown-menu">
-                                <li><a href="{{ route('customFields.index') }}">{{ trans('fi.custom_fields') }}</a></li>
-                                <li><a href="#">{{ trans('fi.import_data') }}</a></li>
+	                            <li><a href="{{ route('customFields.index') }}">{{ trans('fi.custom_fields') }}</a></li>
+	                            <li><a href="#">{{ trans('fi.import_data') }}</a></li>
 								<li>{{ link_to_route('invoiceGroups.index', trans('fi.invoice_groups')) }}</li>
-                                <li><a href="{{ route('itemLookups.index') }}">{{ trans('fi.item_lookups') }}</a></li>
+	                            <li><a href="{{ route('itemLookups.index') }}">{{ trans('fi.item_lookups') }}</a></li>
 								<li>{{ link_to_route('paymentMethods.index', trans('fi.payment_methods')) }}</li>
 								<li>{{ link_to_route('taxRates.index', trans('fi.tax_rates')) }}</li>
 								<li><a href="{{ route('users.index') }}">{{ trans('fi.user_accounts') }}</a></li>
-                                <li class="divider"></li>
-                                <li>{{ link_to_route('settings.index', trans('fi.system_settings')) }}</li>
+	                            <li class="divider"></li>
+	                            <li>{{ link_to_route('settings.index', trans('fi.system_settings')) }}</li>
 							</ul>
 						</li>
 						<li class="divider-vertical"></li>
-						<li><a href="{{ route('session.logout') }}" class="tip icon logout" data-original-title="{{ trans('fi.logout') }}" data-placement="bottom"><i class="icon-off"></i></a></li>
+						<li><a href="{{ route('session.logout') }}" class="tip icon logout" data-original-title="{{ trans('fi.logout') }}" data-placement="bottom"><i class="fa fa-power-off"></i></a></li>
 					</ul>
-
-				</div>
-
-			</div>
-
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
 		</nav>
 
 		<div class="sidebar">
